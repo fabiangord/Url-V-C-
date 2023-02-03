@@ -34,8 +34,8 @@ const registerUser = async(req,res)=>{
             host: "smtp.mailtrap.io",
             port: 2525,
             auth: {
-                user: process.env.user,
-                pass: process.env.pass
+                user: process.env.USER,
+                pass: process.env.PASS
             }
           });
 
@@ -43,7 +43,7 @@ const registerUser = async(req,res)=>{
             from: '"Fred Foo 👻" <foo@example.com>', 
             to: user.email,
             subject: "Verifica tu cuenta de correo",
-            html: `<a href='${ pathClever || 'http://localhost:8080' }auth/confirmar/${user.tokenConfirm}'>Verifica tu cuenta aquí</a>`
+            html: `<a href='${ PATHCLEVER || 'http://localhost:8080' }auth/confirmar/${user.tokenConfirm}'>Verifica tu cuenta aquí</a>`
           });
 
        

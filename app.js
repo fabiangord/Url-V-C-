@@ -23,7 +23,7 @@ const app = express()
 
 const corsOptions = {
     credential: true,
-    origin: process.env.pathClever|| '*',
+    origin: process.env.PATHCLEVER|| '*',
     methods: ['GET', 'POST']
 }
 
@@ -36,15 +36,15 @@ app.set("views","./views");
 app.set('trust proxy', 1)
 //Middlewares
 app.use(session({
-    secret: process.env.secretSession,
+    secret: process.env.SECRETSESSION,
     resave: false,
     saveUninitialized: false,
     name: 'superNombreSecretoPa',
     store: MongoStore.create({
         clientPromise: clientDB,
-        dbName: process.env.dbname
+        dbName: process.env.DBNAME
     }),
-    cookie: { secure: process.env.modo === 'production', maxAge: 30 * 24 * 60 * 60 * 1000}
+    cookie: { secure: process.env.MODO === 'production', maxAge: 30 * 24 * 60 * 60 * 1000}
 }))
 app.use(flash())
 app.use(mongoSanitize())
