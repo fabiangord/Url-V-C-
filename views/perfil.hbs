@@ -1,0 +1,33 @@
+{{>navbar}}
+
+<div class="container">
+
+    <div class="text-center my-3">
+        <h1>{{user.userName}}</h1>
+
+        {{#each mensaje }}
+            {{>mensaje}}       
+            
+        {{/each}}
+        
+        <p>Edita aqui tu perfil</p>
+    </div>
+    <div class="my-5 text-center">
+        {{#if image}}
+            <img src="../img/perfil/{{image}}" alt="" class="rounded-circle" type="image">
+        {{else}}
+            <img src="../img/perfil/p.jpeg" alt="" class="rounded-circle" type="image">
+            
+            
+        {{/if}}
+
+    </div>
+
+    <form action="/perfil/edit?_csrf={{csrfToken}}" method="post" enctype="multipart/form-data">
+
+        <input class="form-control form-control-sm my-2" id="formFileSm" type="file" name="myFile">
+        <div class="text-center">
+            <button class="btn btn-dark mt-3">Cambiar Imagen</button>
+        </div>
+    </form>
+</div>

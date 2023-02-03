@@ -1,0 +1,19 @@
+
+{{>navbar}}
+
+<div class="container mt-3">
+<h1 class="mb-3  text-center">Agregue sus URL'S</h1>
+
+{{#each mensaje }}
+     {{>mensaje}}       
+            
+{{/each}}
+
+{{>formulario}}
+
+{{#each urls }}
+    {{>card item=this}}
+{{/each}}
+
+</div>
+

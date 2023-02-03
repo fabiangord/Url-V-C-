@@ -1,0 +1,54 @@
+
+{{>navbarLog}}
+
+<div class="container my-5">
+
+    <h1 class="text-center my-4">Registro para usuarios nuevos</h1>
+
+        {{#each mensaje }}
+            {{>mensaje}}       
+            
+        {{/each}}
+        
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+
+                <form action="/auth/register" method="post">
+                
+                    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+
+                    <input 
+                    type="text"
+                    placeholder="Ingrese Nombre"
+                    class="form-control mb-3"
+                    name="nombre"
+                    >
+
+                    <input 
+                    type="text"
+                    placeholder="Ingrese E-mail"
+                    class="form-control mb-3"
+                    name="email"
+                    >
+
+                    <input 
+                    type="password"
+                    placeholder="Ingrese Clave"
+                    class="form-control mb-3"
+                    name="password"
+                    >
+
+                    <input 
+                    type="password"
+                    placeholder="Vuelva a ingresar clave"
+                    class="form-control mb-3"
+                    name="repassword"
+                    >
+
+                    <button class="btn btn-primary w-100" type="submit">Registrar Usuario</button>
+
+                </form>
+         </div>
+     </div>
+    
+</div>

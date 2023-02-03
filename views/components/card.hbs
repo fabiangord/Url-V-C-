@@ -1,0 +1,14 @@
+<article class="card my-2">
+    <div class="card-body">
+        <div class="d-flex flex-column justify-content-center ">
+            <p>{{item.origin}}</p>
+            <p>{{item.shortURL}}</p>
+        </div>
+        
+        <div class="">
+        <a href="/eliminar/{{item._id}}" class="btn btn-danger">Eliminar</a>
+        <a href="/editar/{{item._id}}" class="btn btn-warning">Editar</a>
+        <button data-short="{{item.shortURL}}" href="#" class="btn btn-success">Copiar</button>
+        </div>
+    </div>
+</article>
