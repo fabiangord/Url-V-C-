@@ -23,7 +23,7 @@ const app = express()
 
 const corsOptions = {
     credential: true,
-    origin: process.env.pathClever|| 'http://localhost/8080',
+    origin: process.env.pathClever|| '*',
     methods: ['GET', 'POST']
 }
 
@@ -44,7 +44,7 @@ app.use(session({
         clientPromise: clientDB,
         dbName: process.env.dbname
     }),
-    cookie: { secure: true, maxAge: 30 * 24 * 60 * 60 * 1000}
+    cookie: { secure: process.env.modo === 'production', maxAge: 30 * 24 * 60 * 60 * 1000}
 }))
 app.use(flash())
 app.use(mongoSanitize())
