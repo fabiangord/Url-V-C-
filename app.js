@@ -23,7 +23,7 @@ const app = express()
 
 const corsOptions = {
     credential: true,
-    origin: process.env.pathClever|| '*',
+    origin: process.env.pathClever|| 'http://localhost/8080',
     methods: ['GET', 'POST']
 }
 
