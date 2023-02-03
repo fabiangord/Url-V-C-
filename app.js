@@ -44,7 +44,7 @@ app.use(session({
         clientPromise: clientDB,
         dbName: process.env.DBNAME
     }),
-    cookie: { secure: process.env.MODO === 'production', maxAge: 30 * 24 * 60 * 60 * 1000}
+    cookie: { secure: true, maxAge: 30 * 24 * 60 * 60 * 1000}
 }))
 app.use(flash())
 app.use(mongoSanitize())
