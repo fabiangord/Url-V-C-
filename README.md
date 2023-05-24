@@ -5,7 +5,7 @@ Desarrollada en Handlebars, CSS3, NODE.JS, JAVASCRIPT, MONGODB, MOONGOSE, ETC...
 
 Fecha: Octubre 2022.
 
-Link:(La aplicación se encuentra temporalmente fuera de la red, para probar ejecutar en el servidor de desarrollo)
+Link:(La aplicación se encuentra temporalmente fuera de la red, para probar ejecutar en el servidor de desarrollo).
 
 # Servidor de desarrollo
 
